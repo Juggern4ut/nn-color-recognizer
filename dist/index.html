@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <title>Complement-Color-Predictor</title>
+    <script src="./js/main.js" defer></script>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Neural Network Color Predictor</h1>
+      <article>
+        <p>A neural network tries to find the complement for a given color.</p>
+        <p>
+          By clicking the 'Test neural network' button, a new random color will
+          be generated and applied to the background. The big box in the middle
+          labeled 'Prediction' is the guess of the neural network. The smaller
+          box below shows the perfect complement. The closer those two are
+          together, the better the neural network has been trained.
+        </p>
+        <p>
+          Clicking the 'Train'-Button will train the neural network with 500
+          random colors and their perfect complement. The more training sessions
+          are done, the smaller the error margin should become.
+        </p>
+      </article>
+    </header>
+    <section>
+      <div id="buttons">
+        <button id="next">Test neural network</button>
+        <button id="train">Train</button>
+      </div>
+      <div id="prediction">
+        <p>Prediction</p>
+        <p>Trainings: <span id="sessions">0</span></p>
+      </div>
+      <article id="compliment">
+        Target
+        <label>(Error: <span id="error"></span>)</label>
+      </article>
+    </section>
+    <footer>
+      <p>
+        This site was inspired by
+        <a href="https://github.com/Jabrils" target="_blank">Jabrils</a>
+        who made a project using a neural network to predict if black or white
+        text looks better on a random background color. A simply neural network
+        library was used that is provided by the
+        <a href="https://www.youtube.com/@TheCodingTrain" target="_blank"
+          >CodingTrain</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+body {
+  font-family: monospace;
+}
+
+section,
+header,
+footer {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+header h1 {
+  text-align: center;
+}
+
+header {
+  text-align: justify;
+  font-size: 16px;
+}
+
+#prediction {
+  background-color: #fff;
+  height: 250px;
+  border: 1px solid #444;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#prediction p {
+  text-align: center;
+  margin: 0;
+  font-size: 20px;
+  width: calc(100% - 20px);
+  font-weight: bold;
+}
+
+#compliment {
+  height: 30px;
+  margin-top: 5px;
+  border: 1px solid #444;
+  text-align: center;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+#buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+button {
+  appearance: none;
+  background-color: #9ba6c0;
+  color: #222;
+  padding: 10px;
+  flex-grow: 1;
+  border: 1px solid #222;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 100ms ease-out;
+}
+
+button:hover {
+  background-color: #7783a1;
+}
+
+button:first-of-type {
+  margin-right: 5px;
+}
+
+footer {
+  background-color: #dedede;
+  text-align: justify;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  margin-top: 50px;
+  border: 1px solid #444;
+}
+
+footer p {
+  margin: 0;
+}
+
+a {
+  color: rgb(17, 69, 211);
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=main.css.map */
