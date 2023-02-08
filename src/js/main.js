@@ -12,17 +12,23 @@ const brain = new nn_1.NeuralNetwork(3, 5, 3);
 let sessions = 0;
 let predictValues = [0, 0, 0];
 let testValues = [0, 0, 0];
+/**
+ * Sets a random color for the testValues
+ */
 const pickRandomColor = () => {
     testValues[0] = Math.random();
     testValues[1] = Math.random();
     testValues[2] = Math.random();
 };
+/**
+ * Generates a new color and lets the neural network predict the complement.
+ */
 const nextColor = () => {
     pickRandomColor();
     predictValues = brain.predict(testValues);
     const target = complementryRGBColor(testValues[0] * 255, testValues[1] * 255, testValues[2] * 255);
     const err = calculateError(predictValues, target);
-    errorLabel.innerHTML = `${Math.floor(err * 100)}%`;
+    errorLabel.innerHTML = `${Math.floor((1 - err) * 100)}%`;
     setBackgroundColor(body, testValues);
     setBackgroundColor(comp, target);
     setBackgroundColor(predictionDiv, predictValues);
@@ -37,14 +43,25 @@ train.addEventListener("click", (e) => {
         brain.train(testValues, t);
         sessions++;
     }
-    sessionsSpan.innerHTML = sessions.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
-    ;
+    sessionsSpan.innerHTML = sessions
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, "'");
 });
+/**
+ * Calculates the error-margin between two arrays
+ * @param a The first Array
+ * @param b The second Array
+ * @returns A number between 0 and 1
+ */
 const calculateError = (a, b) => {
-    let deltaR = Math.abs(a[0] - b[0]);
-    let deltaG = Math.abs(a[1] - b[1]);
-    let deltaB = Math.abs(a[2] - b[2]);
-    return (deltaR + deltaG + deltaB) / 3;
+    const diff = [
+        a[0] * 255 - b[0] * 255,
+        a[1] * 255 - b[1] * 255,
+        a[2] * 255 - b[2] * 255,
+    ];
+    const distance = Math.sqrt(diff[0] ** 2 + diff[1] ** 2 + diff[2] ** 2);
+    const maxDistance = Math.sqrt(3 * 255 ** 2);
+    return distance / maxDistance;
 };
 /**
  * Calculates the complementry color of a given value
