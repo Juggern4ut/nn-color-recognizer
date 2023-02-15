@@ -4,7 +4,7 @@ const sessionsSpan = document.querySelector("#sessions") as HTMLElement;
 const errorLabel = document.querySelector("#error") as HTMLElement;
 
 const predictionDiv = document.querySelector("#prediction") as HTMLElement;
-const body = document.querySelector("body") as HTMLElement;
+const body = document.querySelector("#color") as HTMLElement;
 const comp = document.querySelector("#compliment") as HTMLElement;
 
 const next = document.querySelector("#next") as HTMLButtonElement;

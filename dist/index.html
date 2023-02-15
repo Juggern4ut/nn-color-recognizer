@@ -11,7 +11,8 @@
   </head>
   <body>
     <header>
-      <h1>Neural Network Color Predictor</h1>
+      <h1>Guessing the Unseen</h1>
+      <h2>Using Neural Networks to Predict Color Complements</h2>
       <article>
         <p>A neural network tries to find the complement for a given color.</p>
         <p>
@@ -33,14 +34,16 @@
         <button id="next">Test neural network</button>
         <button id="train">Train</button>
       </div>
-      <div id="prediction">
-        <p>Prediction</p>
-        <p>Trainings: <span id="sessions">0</span></p>
+      <div id="color">
+        <div id="prediction">
+          <p>Prediction</p>
+          <p>Trainings: <span id="sessions">0</span></p>
+        </div>
+        <article id="compliment">
+          Target
+          <label>(Similarity: <span id="error"></span>)</label>
+        </article>
       </div>
-      <article id="compliment">
-        Target
-        <label>(Similarity: <span id="error"></span>)</label>
-      </article>
     </section>
     <footer>
       <p>
